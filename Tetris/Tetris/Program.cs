@@ -1,4 +1,5 @@
 ﻿using System;
+using Tetris;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -9,31 +10,21 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
 
+            Point p1 = new Point();
+            p1.x = 2;
+            p1.y = 3;
+            p1.c = '*';
+            p1.Draw();
 
-            int x1 = 2;
-            int y1 = 3;
-            char c1 = '*';
-
-            Draw(x1, y1, c1);
-
-            int x2 = 4;
-            int y2 = 6;
-            char c2 = '#';
-
-            Draw(x2, y2, c2);
-
-
+            Point p2 = new Point();
+            p2.x = 4;
+            p2.y = 5;
+            p2.c = '#';
+            p2.Draw();
 
 
 
             Console.ReadLine();
-        }
-
-
-        static void Draw(int x, int y, char c)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(c);
         }
     }
 }
