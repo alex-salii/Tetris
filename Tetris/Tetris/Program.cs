@@ -10,13 +10,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
 
+            Square s = new Square(5, 7, '*');
+            s.Draw();
+
             Point p1 = new Point(2, 3, '*');
             p1.Draw();
-
-            Point p2 = new Point(4, 6, '#');
-            p2.Draw();
-
-
 
             Console.ReadLine();
         }
