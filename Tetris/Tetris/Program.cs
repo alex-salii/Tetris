@@ -10,11 +10,34 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
 
-            Square s = new Square(5, 7, '*');
-            s.Draw();
 
-            Point p1 = new Point(2, 3, '*');
-            p1.Draw();
+            FigureGenerator generator = new FigureGenerator(20, 0, '*');
+
+            Figure s = null;
+
+            while (true)
+            {
+                FigureFall(ref s, generator);
+                s.Draw();  
+            }
+
+            static void FigureFall(ref Figure fig, FigureGenerator generator)
+            {
+
+                fig = generator.GetNewFigure();
+                fig.Draw();
+
+                for (int i = 0; i < 15; i++)
+                {
+                    fig.Hide();
+                    fig.Move(Direction.DOWN);
+                    fig.Draw();
+                    Thread.Sleep(200);
+                }
+            }
+
+
+        
 
             Console.ReadLine();
         }
